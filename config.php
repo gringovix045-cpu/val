@@ -7,7 +7,7 @@
 
 // Número do WhatsApp (somente dígitos, com código do país + DDD)
 // Exemplo: Brasil (55) + DDD (11) + número (999999999) = 5511999999999
-define('WA_NUMBER', '5500000000000');
+define('WA_NUMBER', '551154441502');
 
 // URL base do WhatsApp (não alterar)
 define('WA_LINK', 'https://wa.me/' . WA_NUMBER);

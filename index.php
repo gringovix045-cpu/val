@@ -1,0 +1,311 @@
+<?php require_once 'inc/header.php'; ?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Central de Atendimento com atendimento humano via WhatsApp. Resolva problemas com tag, pagamentos, segunda via e mais."/>
+  <meta name="robots" content="noarchive, nosnippet, noimageindex"/>
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <title>Central de Atendimento – Atendimento Humano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <noscript><meta http-equiv="refresh" content="0;url=noscript.php"/></noscript>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/main.js"></script>
+</head>
+<body>
+
+<div class="ov" id="ov" onclick="closeMob()"></div>
+<div class="mob" id="mob">
+  <button class="mc" onclick="closeMob()">✕</button>
+  <nav class="ml">
+    <a href="#servicos" onclick="closeMob()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Serviços</a>
+    <a href="#como-funciona" onclick="closeMob()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Como Funciona</a>
+    <a href="#faq" onclick="closeMob()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Dúvidas</a>
+    <a href="sitemap.php" onclick="closeMob()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>Mapa do Site</a>
+  </nav>
+  <div style="position:absolute;bottom:24px;left:18px;right:18px;">
+    <a href="<?= WA_LINK ?>" onclick="closeMob()" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#25D366;color:#fff;padding:13px 18px;border-radius:50px;font-size:13.5px;font-weight:700;text-decoration:none;width:100%;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      Falar no WhatsApp
+    </a>
+  </div>
+</div>
+
+<header>
+  <div class="w">
+    <div class="hdr">
+      <a class="logo" href="index.php">
+        <div class="logo-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="10" r="1" fill="white"/>
+            <circle cx="12" cy="10" r="1" fill="white"/>
+            <circle cx="15" cy="10" r="1" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <span class="logo-name">Central de Atendimento</span>
+          <span class="logo-sub">Atendimento Humano</span>
+        </div>
+      </a>
+      <nav class="desk-nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="sitemap.php">Mapa do Site</a>
+        <a href="<?= WA_LINK ?>" class="nav-cta">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </nav>
+      <button class="ham" onclick="openMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="status-strip">
+    <div class="sp"><div class="dot"></div>Atendimento disponível agora</div>
+    <div class="sdiv"></div>
+    <div class="sp"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Resposta média: 2 minutos</div>
+  </div>
+  <div class="w">
+    <div class="hero-body">
+      <div class="hero-txt">
+        <div class="status-row">
+          <div class="sp"><div class="dot"></div>Atendimento disponível agora</div>
+          <div class="sdiv"></div>
+          <div class="sp">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Resposta média: 2 minutos
+          </div>
+        </div>
+        <h1>Precisa de <span class="hl">ajuda?</span></h1>
+        <p>Resolva problemas com sua tag, pagamentos, segunda via e outros serviços com atendimento humano.</p>
+        <a href="<?= WA_LINK ?>" class="btn-wa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Falar com um atendente
+        </a>
+        <div class="sec-note">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Atendimento 100% seguro e humanizado
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <img src="assets/banner.png" alt="App de atendimento – Tag, Pagamentos e Suporte" loading="lazy" draggable="false"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec sec-bg" id="servicos">
+  <div class="w">
+    <div class="sec-head">
+      <div class="sec-ttl"><div class="tl"></div><h2>Serviços mais procurados</h2><div class="tl"></div></div>
+      <p class="sec-sub">Escolha o que você precisa e fale com um especialista.</p>
+    </div>
+    <div class="svc-list">
+      <a href="<?= WA_ATIVAR_TAG ?>" class="svc">
+        <div class="svc-ic ic-tl"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/></svg></div>
+        <div class="svc-bd"><strong>Ativar Tag</strong><span>Ativação, primeira utilização e vinculação ao veículo.</span></div>
+        <div class="svc-arr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </a>
+      <a href="<?= WA_PAGAMENTO ?>" class="svc">
+        <div class="svc-ic ic-nv"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="svc-bd"><strong>Problemas de Pagamento</strong><span>Cobrança não reconhecida, pagamento recusado, erro no débito e mais.</span></div>
+        <div class="svc-arr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </a>
+      <a href="<?= WA_SEGUNDA_VIA ?>" class="svc">
+        <div class="svc-ic ic-tl"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/><line x1="9" y1="11" x2="12" y2="11"/></svg></div>
+        <div class="svc-bd"><strong>2ª Via de Contas</strong><span>Faturas, comprovantes e histórico de cobranças.</span></div>
+        <div class="svc-arr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </a>
+      <a href="<?= WA_COBRANCA ?>" class="svc">
+        <div class="svc-ic ic-nv"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="svc-bd"><strong>Cobrança Indevida</strong><span>Cobranças duplicadas, valores incorretos ou não reconhecidos na fatura.</span></div>
+        <div class="svc-arr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </a>
+      <a href="<?= WA_OUTROS ?>" class="svc">
+        <div class="svc-ic ic-tl"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+        <div class="svc-bd"><strong>Outros Serviços</strong><span>Dúvidas gerais, solicitações diversas e outros assuntos.</span></div>
+        <div class="svc-arr"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="w">
+    <div class="tg">
+      <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Atendimento<br>Humanizado</span></div>
+      <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Resposta<br>Rápida</span></div>
+      <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Ambiente<br>Seguro</span></div>
+      <div class="ti"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/><path d="M16 11l1.5 1.5L21 9"/></svg><span>Especialistas<br>Disponíveis</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="sec sec-wh" id="como-funciona">
+  <div class="w">
+    <div class="sec-head">
+      <div class="sec-ttl"><div class="tl"></div><h2>Como <span class="hl">funciona</span></h2><div class="tl"></div></div>
+      <p class="sec-sub">Processo simples e rápido em 4 passos.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="sc"><div class="sn">1</div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="sl">Escolha o serviço</div></div>
+      <div class="scon"></div>
+      <div class="step"><div class="sc"><div class="sn">2</div><svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></div><div class="sl">Fale com especialista</div></div>
+      <div class="scon"></div>
+      <div class="step"><div class="sc"><div class="sn">3</div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div><div class="sl">Receba orientações</div></div>
+      <div class="scon"></div>
+      <div class="step"><div class="sc"><div class="sn">4</div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div><div class="sl">Problema resolvido</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-bg" id="faq">
+  <div class="w">
+    <div class="sec-head">
+      <div class="sec-ttl"><div class="tl"></div><h2>Perguntas <span class="hl">frequentes</span></h2><div class="tl"></div></div>
+      <p class="sec-sub">Tire suas dúvidas antes de falar com um especialista.</p>
+    </div>
+    <div class="faq-ls">
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">Como ativar minha tag?<div class="fi-ico">+</div></button><div class="fa"><div class="fai">Para ativar sua tag, acesse o app ou site com seus dados de cadastro e siga o passo a passo. Nossos especialistas também podem te guiar via WhatsApp.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">Como solicitar segunda via de contas?<div class="fi-ico">+</div></button><div class="fa"><div class="fai">A segunda via pode ser solicitada diretamente via WhatsApp. Tenha em mãos seu CPF/CNPJ e dados do veículo vinculado para agilizar o atendimento.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">Como resolver problemas de pagamento?<div class="fi-ico">+</div></button><div class="fa"><div class="fai">Nossa equipe verifica o histórico de transações e ajuda a regularizar cobranças incorretas ou pagamentos recusados. Entre em contato pelo WhatsApp.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">O que fazer em caso de cobrança indevida?<div class="fi-ico">+</div></button><div class="fa"><div class="fai">Entre em contato pelo WhatsApp imediatamente. Nossa equipe irá contestar a cobrança e iniciar o processo de estorno quando necessário.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">Como atualizar meus dados cadastrais?<div class="fi-ico">+</div></button><div class="fa"><div class="fai">A atualização pode ser feita via aplicativo ou com apoio dos nossos especialistas pelo WhatsApp, mediante verificação de identidade.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">Quanto tempo para obter retorno?<div class="fi-ico">+</div></button><div class="fa"><div class="fai">Nosso tempo médio de resposta é de 2 minutos durante o horário de atendimento. Casos mais complexos podem levar até 24 horas úteis para resolução completa.</div></div></div>
+    </div>
+    <div class="fnf">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0d1b5e" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <div class="fnft"><strong>Não encontrou sua dúvida?</strong><span>Fale com a nossa equipe no WhatsApp.</span></div>
+      <a href="<?= WA_LINK ?>" class="btn-wsm">Falar agora <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta">
+  <div class="w">
+    <div class="cta-in">
+      <div class="cta-row">
+        <div class="cta-ico">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00d4ef" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="cta-tt">Ainda precisa de ajuda?</div>
+          <div class="cta-sb">Nossa equipe está pronta para atender você agora!</div>
+        </div>
+      </div>
+      <div class="cta-right">
+        <a href="<?= WA_LINK ?>" class="btn-wlg">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          Falar com um especialista
+        </a>
+        <div class="cta-nt"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST FOOTER BAR -->
+<div class="tft">
+  <div class="w">
+    <div class="tfg">
+      <div class="tfi">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        <span>Ambiente seguro <strong></strong></span>
+      </div>
+      <div class="tfi">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Seus dados estão protegidos</span>
+      </div>
+      <div class="tfi desktop-only">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>Resposta rápida</span>
+      </div>
+      <div class="tfi desktop-only">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00b4cc" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Atendimento humano</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w">
+    <div class="ft-inner">
+      <div class="ft-brand">
+        <div class="ft-logo">
+          <div class="logo-box">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" fill="rgba(255,255,255,0.12)" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="10" r="1" fill="white"/>
+              <circle cx="12" cy="10" r="1" fill="white"/>
+              <circle cx="15" cy="10" r="1" fill="white"/>
+            </svg>
+          </div>
+          <div>
+            <span class="logo-name">Central de Atendimento</span>
+            <span class="logo-sub">Atendimento Humano</span>
+          </div>
+        </div>
+        <p class="ft-desc">Suporte especializado e humanizado para resolver seus problemas com agilidade e segurança via WhatsApp.</p>
+        <a href="<?= WA_LINK ?>" class="ft-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <div class="ft-cols">
+        <div class="ft-col">
+          <h4>Serviços</h4>
+          <a href="<?= WA_ATIVAR_TAG ?>">Ativar Tag</a>
+          <a href="<?= WA_PAGAMENTO ?>">Problemas de Pagamento</a>
+          <a href="<?= WA_SEGUNDA_VIA ?>">2ª Via de Contas</a>
+          <a href="<?= WA_COBRANCA ?>">Cobrança Indevida</a>
+          <a href="<?= WA_OUTROS ?>">Outros Serviços</a>
+        </div>
+        <div class="ft-col">
+          <h4>Navegação</h4>
+          <a href="index.php">Início</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#faq">Dúvidas Frequentes</a>
+          <a href="sitemap.php">Mapa do Site</a>
+        </div>
+        <div class="ft-col">
+          <h4>Legal</h4>
+          <a href="politica-privacidade.php">Política de Privacidade</a>
+          <a href="termos-uso.php">Termos de Uso</a>
+          <a href="sitemap.php">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <hr class="ft-div"/>
+    <div class="ft-bot">
+      <p class="ft-copy">© <?php echo date('Y'); ?> Central de Atendimento Humano. Todos os direitos reservados.</p>
+      <div class="ft-links">
+        <a href="politica-privacidade.php">Política de Privacidade</a>
+        <a href="termos-uso.php">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="<?= WA_LINK ?>" class="fwa" aria-label="WhatsApp">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  <div class="fwab"></div>
+</a>
+
+</body>
+</html>

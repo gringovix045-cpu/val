@@ -1,0 +1,28 @@
+User-agent: *
+Disallow: /inc/
+Disallow: /config.php
+Disallow: /assets/
+
+# Permitir indexação apenas das páginas principais
+Allow: /index.php
+Allow: /politica-privacidade.php
+Allow: /termos-uso.php
+Allow: /sitemap.php
+
+# Bloquear bots que não respeitam robots.txt não adiantam aqui,
+# mas bots legítimos (Googlebot) seguirão estas regras.
+
+# Impedir arquivamento (Wayback Machine e similares)
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: Wget
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+Sitemap: https://seudominio.com.br/sitemap.xml
